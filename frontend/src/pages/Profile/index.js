@@ -5,7 +5,7 @@ import { FiPower, FiTrash2 } from 'react-icons/fi';
 import './styles.css';
 
 function Profile() {
-    return(
+    return (
         <div className="profile-container">
             <header>
                 <img src={logoImg} alt="Logo" />
