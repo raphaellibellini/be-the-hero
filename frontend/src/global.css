@@ -50,3 +50,22 @@ form input {
 .button:hover {
     filter: brightness(90%); /* reduz o brilho em 10% */
 }
+
+.link {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    color: #41414d;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.link svg { /* icones proveninetes do "react-icons" são svg */
+    margin-right: 8px;
+}
+
+.link:hover {
+    opacity: 0.8;
+}
