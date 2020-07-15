@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
 import logoImg from '../../assets/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom'; /* O "useHistory" é utilizado para fazer navegação através do JS sem utilizar o componente "Link" do "react-router-dom" */
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
@@ -12,9 +12,10 @@ function Register() {
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
 
+    const history = useHistory();
 
     async function handleRegister(e) {
-        e.preventDefault();
+        e.preventDefault(); /* evitar o comportamento padrão, onde a pagina recarrega */ 
         const data = {
             name,
             email,
@@ -26,6 +27,7 @@ function Register() {
         try {
             const response = await api.post('ongs', data);
             alert(`Seu ID de acesso: ${response.data.id}`);
+            history.push('/'); /* redireciona para a rota raiz */
         } catch (err) {
             alert('Erro no cadastro, tente novamente.');
         }
